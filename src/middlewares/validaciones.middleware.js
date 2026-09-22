@@ -15,3 +15,12 @@ export const validarCamposLogin = async (req,res,next) => {
     }
     next();
 }
+
+export const validarCamposLibros = async (req,res,next) => {
+    if (!req.body.nombre || !req.body.autor) {
+        return res.status(400).json({
+            error: "Los campos nombre y autor son requeridos"
+        });
+    }
+    next();
+}
