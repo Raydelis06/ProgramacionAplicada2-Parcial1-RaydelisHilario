@@ -7,6 +7,7 @@ import {
 import {
     validarCamposLibros
 } from "../middlewares/validaciones.middleware"
+import soloAdmin from "../middlewares/auth.middleware"
 
 const router = Router()
 
@@ -15,9 +16,9 @@ const router = Router()
 //acceso: cualquier usuario
 router.get('/', obtenerLibros)
 //acceso: admin
-router.post('/', validarCamposLibros, agregarLibro)
+router.post('/', soloAdmin, validarCamposLibros, agregarLibro)
 //acceso: admin
-router.get('/:id', eliminarLibro)
+router.get('/:id', soloAdmin, eliminarLibro)
 
 
 export default router
