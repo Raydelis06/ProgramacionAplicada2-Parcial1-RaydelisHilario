@@ -2,6 +2,7 @@ import "dotenv/config"
 import express from "express"
 import { loggerMiddleware } from "./middlewares/logger.middleware.js"
 import authRoutes from "./routes/auth.routes.js"
+import librosRoutes from "./routes/libros.routes.js"
 
 const app = express()
 
@@ -11,7 +12,8 @@ app.use(loggerMiddleware)
 //Ruta publica para autenticacion (login y registro)
 app.use("/auth", authRoutes)
 
-//ruta con proteccion de rol para libros
+//ruta para libros
+app.use("/libros", librosRoutes)
 
 app.use((err, req, res, next) => {
   console.error(err.message)
