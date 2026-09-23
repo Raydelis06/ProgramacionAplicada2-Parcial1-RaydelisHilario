@@ -3,11 +3,11 @@ import {
     obtenerLibros,
     agregarLibro,
     eliminarLibro
-} from "../controllers/libros.controller"
+} from "../controllers/libros.controller.js"
 import {
     validarCamposLibros
-} from "../middlewares/validaciones.middleware"
-import soloAdmin from "../middlewares/auth.middleware"
+} from "../middlewares/validaciones.middleware.js"
+import soloAdmin from "../middlewares/auth.middleware.js"
 
 const router = Router()
 

@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
     registro,
     login
-} from "../controllers/auth.controller"
+} from "../controllers/auth.controller.js"
 import {
     validarCamposRegistro, 
     validarCamposLogin
