@@ -6,7 +6,7 @@ import {
 import {
     validarCamposRegistro, 
     validarCamposLogin
-} from "../middlewares/validaciones.middleware"
+} from "../middlewares/validaciones.middleware.js"
 
 const router = Router()
 
