@@ -18,7 +18,7 @@ router.get('/', obtenerLibros)
 //acceso: admin
 router.post('/', soloAdmin, validarCamposLibros, agregarLibro)
 //acceso: admin
-router.get('/:id', soloAdmin, eliminarLibro)
+router.delete('/:id', soloAdmin, eliminarLibro)
 
 
 export default router

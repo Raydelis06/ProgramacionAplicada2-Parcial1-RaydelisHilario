@@ -19,7 +19,7 @@ export const validarCamposLogin = async (req,res,next) => {
 export const validarCamposLibros = async (req,res,next) => {
     if (!req.body.titulo || !req.body.autor) {
         return res.status(400).json({
-            error: "Los campos nombre y autor son requeridos"
+            error: "Los campos titulo y autor son requeridos"
         });
     }
     next();
