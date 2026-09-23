@@ -3,6 +3,12 @@ import { prisma } from "../db.js"
 // Crear préstamo
 export const crearPrestamo = async (req, res, next) => {
 	try {
+		const{libroId} = req.body
+		if(!libroId){
+			return res.status(404).json({
+				error: "El usuarioId y libroId son requeridos"
+			})
+		}
 		const libro = await prisma.libro.findUnique({
 			where: { id: libroId }
 		})
