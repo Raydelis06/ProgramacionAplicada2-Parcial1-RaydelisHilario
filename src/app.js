@@ -3,6 +3,7 @@ import express from "express"
 import { loggerMiddleware } from "./middlewares/logger.middleware.js"
 import authRoutes from "./routes/auth.routes.js"
 import librosRoutes from "./routes/libros.routes.js"
+import prestamosRoutes from "./routes/prestamos.routes.js"
 import {verificarToken} from "./middlewares/auth.middleware.js"
 
 const app = express()
@@ -15,6 +16,7 @@ app.use("/auth", authRoutes)
 
 //ruta para libros protegida por login
 app.use("/libros", verificarToken, librosRoutes)
+app.use("/prestamos", prestamosRoutes)
 
 app.use((err, req, res, next) => {
   console.error(err.message)

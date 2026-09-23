@@ -1,4 +1,4 @@
-import { prisma } from "@prisma/client/extension"
+import { prisma } from "../db.js"
 //crear libro
 export const agregarLibro = async (req,res,next) => {
     try{

@@ -7,7 +7,7 @@ import {
 import {
     validarCamposLibros
 } from "../middlewares/validaciones.middleware.js"
-import soloAdmin from "../middlewares/auth.middleware.js"
+import {soloAdmin} from "../middlewares/auth.middleware.js"
 
 const router = Router()
 
