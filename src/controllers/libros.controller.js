@@ -4,7 +4,7 @@ export const agregarLibro = async (req,res,next) => {
     try{
         const {titulo, autor, disponible} = req.body
 
-        const existe = await prisma.libro.findUnique({where: {nombre, autor}})
+        const existe = await prisma.libro.findUnique({where: {titulo, autor}})
 
         if(existe){
             return res.status(400).json('Ya existe un libro del mismo autor con este nombre')
@@ -12,13 +12,13 @@ export const agregarLibro = async (req,res,next) => {
 
         const libro = await prisma.libro.create({
             data: {
-                nombre, autor, disponible: disponible || true
+                titulo, autor, disponible: disponible || true
             }
         })
 
         return res.status(201).json({mensaje: 'Libro agregado con exito!', libro: {
             id: libro.id,
-            nombre: libro.nombre,
+            titulo: libro.titulo,
             disponible: libro.disponible
         }})
 
