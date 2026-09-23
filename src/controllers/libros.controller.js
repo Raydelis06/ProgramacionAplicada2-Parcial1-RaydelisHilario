@@ -2,7 +2,7 @@ import { prisma } from "../db.js"
 //crear libro
 export const agregarLibro = async (req,res,next) => {
     try{
-        const {nombre, autor, disponible} = req.body
+        const {titulo, autor, disponible} = req.body
 
         const existe = await prisma.libro.findUnique({where: {nombre, autor}})
 
